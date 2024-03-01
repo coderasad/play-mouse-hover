@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just for fun</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="input">
+        <input type="text" placeholder="Enter write here">
+        <button onclick="handleSubmit()">Submit</button>
+    </div>
+    <div class="section">
+        <h2>Just For Fun</h2>
+        <div class="container"></div>
+    </div>
+
+
+    <script>
+        const section = document.querySelector('.section');
+        const input = document.querySelector('.input');
+        const container = document.querySelector('.container');
+        const h2 = document.querySelector('h2');
+
+        const handleSubmit = () => {
+            h2.innerText = document.querySelector('input').value;
+            section.style.display = 'flex'
+            input.style.display = 'none'
+        }
+        const count = 800;
+        for (let i = 0; i < count; i++) {
+            let box = document.createElement('div')
+            box.className = 'box'
+            container.appendChild(box)
+        }
+
+        const box = document.querySelectorAll('.box')
+
+        for (let i = 0; i < box.length; i++) {
+            let duration = Math.random() * 3;
+            let changeColor = Math.random() * 360;
+            box[i].addEventListener('mouseover', (e) => {
+                box[i].classList.add('active')
+                box[i].style.animationDuration = 1 + duration + 's'
+                box[i].style.filter = 'hue-rotate(' + changeColor + 'deg)'
+
+            })
+        }
+    </script>
+
+</body>
+
+</html>
