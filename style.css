@@ -48,8 +48,13 @@ h2 {
   color: #fff;
   font-size: 12rem;
   text-transform: capitalize;
+  word-break: break-all;
 }
-
+@media (max-width: 768px) {
+  h2 {
+    font-size: 5rem;
+  }
+}
 .container {
   position: absolute;
   width: 100%;
