@@ -10,7 +10,7 @@
 
 <body>
     <div class="input">
-        <input type="text" placeholder="Enter write here">
+        <input type="text" placeholder="Enter Your Name" id="textInput">
         <button onclick="handleSubmit()">Submit</button>
     </div>
     <div class="section">
@@ -30,6 +30,15 @@
             section.style.display = 'flex'
             input.style.display = 'none'
         }
+
+        document.getElementById('textInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                handleSubmit();
+            }
+        });
+
+
+
         const count = 800;
         for (let i = 0; i < count; i++) {
             let box = document.createElement('div')
